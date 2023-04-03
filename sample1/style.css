@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+:root{
+    --color-w : #fff;
+    --color-b : #000;
+    --color-g : #b3b0ab;
+}
+*{
+    -webkit-text-size-adjust: none;
+    font-family: 'BookkMyungjo-Bd';
+}
+label, input, button, select, img {
+    vertical-align: middle;
+    font-size: 1em;
+}
+ul, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    color: var(--color-g);
+    text-decoration: none;
+}
+/* -------------------------- */
+body {
+    background-color: #4b463d;
+    font-size: 0.81em;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+/* header 전체*/
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    top: 0px;
+    left: 0;
+    right: 0;
+    /* height: 140px; */
+}
+header a{
+    color: var(--color-w);
+}
+/* -------------------- */
+/* header s1 */
+header #s1 {
+    position: relative;
+    margin: 0 8%;
+    height: 81px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+header #s1_sns a{
+    padding: 3px;
+    margin-right: 3px;
+    opacity: .8;
+}
+header #s1 h2 img {
+    width: 128px;
+}
+/* -------------------- */
+/* header s2 */
+#s2{
+    border-top: solid 1px rgb(255 255 255 / 28%);
+    display: flex ;
+}
+#s2_nav {
+    display: flex;
+    padding-top: 15px;
+    margin: 0 auto;
+}
+/* ----------------- */
+.dropdown> a{
+    color: var(--color-w);
+}
+.dropdown {
+    position: relative;
+    width: 100px;
+    display: inline-block;
+    margin-bottom: 12px;
+    text-align: center;
+    z-index: 99;
+    overflow: hidden;
+}
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+    position: relative;
+    top: -100%;
+    z-index: 98;
+}
+/* 상단 hover */
+header:hover{
+    background-color: var(--color-w);
+    transition: all 1s;
+}
+header:hover a{
+    color: var(--color-b);
+    transition: all 1s;
+}
+
+header:hover .dropdown-content {
+    position: relative;
+    display: flex;
+    top: 0;
+    opacity: 1;
+    transition: all 1s;
+}
+header:hover .dropdown a {
+    color: var(--color-b);
+    transition: all 1s;
+}
+header:hover .dropdown-content a {
+    color: var(--color-g);
+    transition: all 1s;
+}
+
+header:hover header #s1 h2{
+    background-image: url('/img/top/logo_b.png');
+    transition: all 1s;
+}
+/* -------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 푸터 */
+footer{
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #b3b0ab;
+    letter-spacing: -.1px;
+    /* background-color: #af5454; */
+}
+/* 푸터 탑 */
+#footer_top{
+    margin: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 100px 0 50px 0;
+}
+#footer a{
+    color: var(--color-w);
+}
+/* 푸터 탑 s1 */
+#footer_top_sec1{
+    width: 380px;
+}
+#footer_logo_warp {
+    position: relative;
+    margin: 0 8%;
+    height: 81px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#footer_logo > img {
+    height: 23px;
+}
+/* 푸터 탑 s2 */
+#footer_top_sec2{
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footer_nav_ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+}
+.footer_nav_ul_list{
+    display:block;
+    width: 100px;
+    margin-bottom: 12px;
+    transition: all.3s;
+}
+.footer_nav_ul_list > a {
+    color: var(--color-w);
+}
+/* 푸터 바텀 */
+
+#footer_bottom{
+    margin: 0 8%;
+    padding-bottom: 100px;
+}

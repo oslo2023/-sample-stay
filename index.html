@@ -10,25 +10,22 @@
 </head>
 <style>
     /* 폰트 임폴트*/
-    @font-face {
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
-        font-family: 'BookkMyungjo-Bd';
-        font-weight: 700;
-        font-style: normal;
-    }
-    /* --- */
+    @import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+    @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');    /* --- */
     :root{
         --color-w : #fff;
         --color-b : #000;
         --color-g : #b3b0ab;
+        --color-nav-hover: #333;
+        --color-main: beige;
     }
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'BookkMyungjo-Bd';
-    }
-    #mainlogo{
+        font-family: 'Amiri', 'Jeju Myeongjo';
+        }
+    .mainlogo{
         width: 128px;
     }
     ul, li, a {
@@ -38,7 +35,14 @@
     body{
         width: 100vw;
         background-color: cadetblue;
+        font-size: 0.81em;
     }
+    /* z-index 정리 */
+    #h_s1{z-index: 1001;}
+    #h_s2{z-index: 1001;}
+    #h_s3{z-index: 1000;}
+    footer{z-index: 98;}
+    /* header */
     header{
         width: 100%;
         display: block;
@@ -58,7 +62,7 @@
         display: flex;
         justify-content: center;
         text-align: center;
-        padding: 15px 0 12px 0;
+        padding: 15px 0 0 0;
     }
     #h_s2 .nav li,
     #h_s3 ul{
@@ -66,7 +70,6 @@
     }
     /* header s1 */
     #h_s1{
-        z-index: 2;
         height: 80px;
         padding: 0 8%;
         display: flex;
@@ -77,11 +80,26 @@
     #h_s1 a{
         color: var(--color-w);
     }
+    #h_s1_l a{
+        opacity: .8;
+        padding: 3px;
+        margin-right: 3px;
+    }
+    #h_s1_r{
+        opacity: .8;
+        padding: 3px;
+        margin-left: 3px;
+    }
+    
+    #h_s1_l a i:hover,
+    #h_s1_r:hover{
+        transform: scale(1.18);
+        transition: transform .2s;
+    }
     /* header s2 */
     #h_s2{
         border-top: 1px solid var(--color-g);
         width: 100%;
-        z-index: 99;
     }
     #h_s2 .nav {
         margin: 0 auto;
@@ -89,10 +107,10 @@
     }
     #h_s2 .nav a{
         color: var(--color-w);
+        font-size: 18px;
     }
     /* header s3 */
     #h_s3{
-        z-index: 1;
         width: 100%;
         padding-bottom: 15px;
         background-color: var(--color-w);
@@ -102,9 +120,71 @@
     }
     #h_s3 a{
         color: var(--color-g);
+        font-size: 14px;
+    }
+    #h_s3 a:hover{
+        color: var(--color-nav-hover);
+        font-size: 14px;
+    }
+    /* header 끝 */
+
+    /* ----------------------------- */
+    /* main */
+    main{
+        width: 100%;
+        background-color: var(--color-main);
+    }
+    /* main s1,s2,s3 */
+    #m_s1,
+    #m_s2,
+    #m_s3{
+        width: 100%;
+    }
+    /* main s1 > 슬라이더 */
+    #m_s1{
+        position: relative;
+        height: 1434px;
+    }
+    /* 슬라이더 이미지들 */
+    #slides{
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+    #slides ul{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .slide-img{
+        position: absolute;
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+    }
+    #img1{background-image: url(/img/slide/slide01.jpg);}
+    #img2{background-image: url(/img/slide/slide02.jpg);}
+    #img3{background-image: url(/img/slide/slide03.jpg);}
+    @keyframes slideFadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+    /* main s2 */
+    #m_s2{
+        padding-top: 100px;
+    }
+    /* main s3 */
+    #m_s3{
+        padding-top: 240px;
     }
 </style>
 <body>
+    <!-- 헤더 -->
     <header onmouseover="headerMouseOver()" onmouseout="headerMouseOut()">
             <section id="h_s1">
                 <div id="h_s1_l"><!-- sns 이동 로고 -->
@@ -112,12 +192,12 @@
                     <a href="/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="/"><i class="fa-brands fa-youtube"></i></a>
                 </div>
-                <div class="h_s1_c"><!-- 사이트 중앙 로고 -->
+                <div id="h_s1_c"><!-- 사이트 중앙 로고 -->
                     <a href="/">
                         <img class="mainlogo"id="mainlogo" src="/img/top/logo_w.png" alt="샘플 스테이 - 펜션 샘플 홈페이지">
                     </a>
                 </div>
-                <div class="h_s1_r"> <!-- 퀵메뉴 -->
+                <div id="h_s1_r"> <!-- 퀵메뉴 -->
                     <a href=""><i class="fa-solid fa-location-dot"></i> Map</a>
                 </div>
             </section>
@@ -165,15 +245,92 @@
             </section>
             
 
-        </header>
-
-
+    </header>
+    <!-- 메인/헤더 이외 전체 -->
+    <main>
+        <!-- 배너 슬라이드 -->
+        <section id="m_s1">
+            <div id="pagenav"></div>
+            <div id="slides">
+                <ul>
+                    <li class="slide-img" id="img1"></li>
+                    <li class="slide-img" id="img2"></li>
+                    <li class="slide-img" id="img3"></li>
+                </ul>
+            </div>
+        </section>
+        <!-- 내용 1 -->
+        <section id="m_s2"></section>
+        <!-- 내용 2 -->
+        <section id="m_s3"></section>
+    </main>
+    <!-- ------------------------- -->
+    <style>
+    
+        /* footer */
+        footer{
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #b3b0ab;
+            letter-spacing: -.1px;
+            background-color: #4b463d;
+        }
+        /* footer s1 */
+        #f_s1{
+            margin: 0 8%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 100px 0 50px 0;
+        }
+        #footer a{
+            color: var(--color-w);
+        }
+        /* footer s1 L*/
+        #f_s1_l{
+            width: 380px;
+        }
+        /* footer s1 R*/
+        #f_s1_r{
+            min-width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #f_nav_wrap{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* align-items: center; */
+        }
+        .f_nav{
+            display:block;
+            width: 100px;
+            margin-bottom: 12px;
+            transition: all.3s;
+        }
+        .f_nav > a {
+            color: var(--color-w);
+            font-size: 18px;
+        }
+        .f_nav ul li a{
+            color: #b3b0ab;
+        }
+        /* footer s2 */
+        #f_s2{
+            margin: 0 8%;
+            padding-bottom: 100px;
+        }
+        </style>
 <!-- 푸터------------------------------------------- -->
     <footer>
-        <div id="footer_top">
+        <section id="f_s1">
 
-            <section id="footer_top_s1">
-                <h2 id="footer_logo">
+            <div id="f_s1_l">
+                <h2 id="f_logo">
                         <img class="mainlogo" src="/img/top/logo_w.png" alt="샘플 스테이 - 펜션 샘플 홈페이지">
                 </h2>
                 <p>
@@ -187,65 +344,63 @@
                     </br>
                     이메일 : abcdefg@gmail.com
                 </p>
-            </section>
+            </div>
 
-            <section id="footer_top_sec2">
-                <div id="footer_nav_warp">
-                    <ul id="footer_nav_ul">
-                        <li class="footer_nav_ul_list">
-                            <a href="">about</a>
-                            <ul class="footer_nav_sub ">
-                                <li><a href="">펜션소개</a></li>
-                                <li><a href="">펜션둘러보기</a></li>
-                                <li><a href="">오시는 길</a></li>
-                            </ul>
-                        </li>
-                        <li class="footer_nav_ul_list">
-                            <a href="">room</a>
-                            <ul class="footer_nav_sub ">
-                                <li><a href="">데이지</a></li>
-                                <li><a href="">민들레</a></li>
-                                <li><a href="">바이올렛</a></li>
-                                <li><a href="">아이리스</a></li>
-                            </ul>
-                        </li>
-                        <li class="footer_nav_ul_list">
-                            <a href="">service</a>
-                            <ul class="footer_nav_sub ">
-                                <li><a href="">조식서비스</a></li>
-                                <li><a href="">이벤트</a></li>
-                                <li><a href="">바비큐</a></li>
-                                <li><a href="">픽업서비스</a></li>
-                            </ul>
-                        </li>
-                        <li class="footer_nav_ul_list">
-                            <a href="">reservation</a>
-                            <ul class="footer_nav_sub ">
-                                <li><a href="">예약안내</a></li>
-                                <li><a href="">실시간예약</a></li>
-                            </ul>
-                        </li>
-                        <li class="footer_nav_ul_list">
-                            <a href="">tour</a>
-                            <ul class="footer_nav_sub ">
-                                <li><a href="">링크타입</a></li>
-                                <li><a href="">목록타입</a></li>
-                            </ul>
-                        </li>
-                        <li class="footer_nav_ul_list">
-                            <a href="">community</a>
-                            <ul class="footer_nav_sub ">
-                                <li><a href="">공지사항</a></li>
-                                <li><a href="">이용후기</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-        <div id="footer_bottom">
+            <div id="f_s1_r">
+                <ul id="f_nav_wrap">
+                    <li class="f_nav">
+                        <a href="">about</a>
+                        <ul>
+                            <li><a href="">펜션소개</a></li>
+                            <li><a href="">펜션둘러보기</a></li>
+                            <li><a href="">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li class="f_nav">
+                        <a href="">room</a>
+                        <ul>
+                            <li><a href="">데이지</a></li>
+                            <li><a href="">민들레</a></li>
+                            <li><a href="">바이올렛</a></li>
+                            <li><a href="">아이리스</a></li>
+                        </ul>
+                    </li>
+                    <li class="f_nav">
+                        <a href="">service</a>
+                        <ul>
+                            <li><a href="">조식서비스</a></li>
+                            <li><a href="">이벤트</a></li>
+                            <li><a href="">바비큐</a></li>
+                            <li><a href="">픽업서비스</a></li>
+                        </ul>
+                    </li>
+                    <li class="f_nav">
+                        <a href="">reservation</a>
+                        <ul>
+                            <li><a href="">예약안내</a></li>
+                            <li><a href="">실시간예약</a></li>
+                        </ul>
+                    </li>
+                    <li class="f_nav">
+                        <a href="">tour</a>
+                        <ul>
+                            <li><a href="">링크타입</a></li>
+                            <li><a href="">목록타입</a></li>
+                        </ul>
+                    </li>
+                    <li class="f_nav">
+                        <a href="">community</a>
+                        <ul>
+                            <li><a href="">공지사항</a></li>
+                            <li><a href="">이용후기</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="f_s2">
             ⓒ샘플스테이 - 펜션 홈페이지 샘플 All rights reserved.
-        </div>
+        </section>
     </footer>
 </body>
 <script type="text/javascript">
@@ -298,6 +453,37 @@
             }, 100);
             
     }
-      
+    // 슬라이더
+    const img1 = document.getElementById('img1');
+    const img2 = document.getElementById('img2');
+    const img3 = document.getElementById('img3');
+   
+    let zIndexes = [-2, -1, 0];
+    let index = 0;
+
+    setInterval(function() {
+    zIndexes[index] += 3;
+    index = (index + 1) % zIndexes.length;
+    
+    img1.style.zIndex = zIndexes[0];
+    img2.style.zIndex = zIndexes[1];
+    img3.style.zIndex = zIndexes[2];
+    
+    const highestZIndex = Math.max(...zIndexes);
+    const highestZIndexDiv = [img1, img2, img3].find(div => parseInt(div.style.zIndex) === highestZIndex);
+    
+    let opacity = 0;
+    highestZIndexDiv.style.opacity = opacity;
+
+    const fadeInInterval = setInterval(function() {
+        opacity += 0.05;
+        highestZIndexDiv.style.opacity = opacity;    
+        if (opacity >= 1) {
+            clearInterval(fadeInInterval);
+            }
+        }, 30);
+    }, 4000);
+
 </script>
+
 </html>
