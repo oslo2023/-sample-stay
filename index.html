@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/다시/">
+    <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    /* 폰트 임폴트*/
+    @font-face {
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+        font-family: 'BookkMyungjo-Bd';
+        font-weight: 700;
+        font-style: normal;
+    }
+    /* --- */
+    :root{
+        --color-w : #fff;
+        --color-b : #000;
+        --color-g : #b3b0ab;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'BookkMyungjo-Bd';
+    }
+    #mainlogo{
+        width: 128px;
+    }
+    ul, li, a {
+        list-style: none;
+        text-decoration: none;
+    }
+    body{
+        width: 100vw;
+        background-color: cadetblue;
+    }
+    header{
+        width: 100%;
+        display: block;
+        position:absolute;
+    }
+    /* header s1, s2, s3 */
+    #h_s1,
+    #h_s2,
+    #h_s3{
+        position: relative;
+    }
+    /* header s1, s2 */
+    
+    /* header s2, s3 */
+    #h_s2,
+    #h_s3{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 15px 0 12px 0;
+    }
+    #h_s2 .nav li,
+    #h_s3 ul{
+        width: 100px;
+    }
+    /* header s1 */
+    #h_s1{
+        z-index: 2;
+        height: 80px;
+        padding: 0 8%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #h_s1 a{
+        color: var(--color-w);
+    }
+    /* header s2 */
+    #h_s2{
+        border-top: 1px solid var(--color-g);
+        width: 100%;
+        z-index: 99;
+    }
+    #h_s2 .nav {
+        margin: 0 auto;
+        display: flex;
+    }
+    #h_s2 .nav a{
+        color: var(--color-w);
+    }
+    /* header s3 */
+    #h_s3{
+        z-index: 1;
+        width: 100%;
+        padding-bottom: 15px;
+        background-color: var(--color-w);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all .5s;
+    }
+    #h_s3 a{
+        color: var(--color-g);
+    }
+</style>
+<body>
+    <header onmouseover="headerMouseOver()" onmouseout="headerMouseOut()">
+            <section id="h_s1">
+                <div id="h_s1_l"><!-- sns 이동 로고 -->
+                    <a href="/"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="/"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="h_s1_c"><!-- 사이트 중앙 로고 -->
+                    <a href="/">
+                        <img class="mainlogo"id="mainlogo" src="/img/top/logo_w.png" alt="샘플 스테이 - 펜션 샘플 홈페이지">
+                    </a>
+                </div>
+                <div class="h_s1_r"> <!-- 퀵메뉴 -->
+                    <a href=""><i class="fa-solid fa-location-dot"></i> Map</a>
+                </div>
+            </section>
+
+            <section id="h_s2">
+                <ul class="nav">
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">room</a></li>
+                    <li><a href="#">service</a></li>
+                    <li><a href="#">reservation</a></li>
+                    <li><a href="#">tour</a></li>
+                    <li><a href="#">community</a></li>
+                </ul>
+            </section>
+            <section id="h_s3">
+                <ul>
+                    <li><a href="">펜션소개</a></li>
+                    <li><a href="">펜션둘러보기</a></li>
+                    <li><a href="">오시는길</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">데이지</a></li>
+                    <li><a href="">민들레</a></li>
+                    <li><a href="">바이올렛</a></li>
+                    <li><a href="">아이리스</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">조식서비스</a></li>
+                    <li><a href="">이벤트</a></li>
+                    <li><a href="">바비큐</a></li>
+                    <li><a href="">픽업서비스</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">예약안내</a></li>
+                    <li><a href="">실시간예약</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">링크타입</a></li>
+                    <li><a href="">목록타입</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">이용후기</a></li>
+                </ul>
+            </section>
+            
+
+        </header>
+
+
+<!-- 푸터------------------------------------------- -->
+    <footer>
+        <div id="footer_top">
+
+            <section id="footer_top_s1">
+                <h2 id="footer_logo">
+                        <img class="mainlogo" src="/img/top/logo_w.png" alt="샘플 스테이 - 펜션 샘플 홈페이지">
+                </h2>
+                <p>
+                    서울특별시 강서구 양천로57길 10-20 이스타빌1차 8층 샘플스테이
+                    </br>
+                    사업자 번호 : 000-00-00000 통신판매업신고 : 제 0000-서울강서-000호 
+                    <br>
+                    상호 : 샘플스테이 대표 : 홍길동
+                    </br>
+                    고객센터 : 1544-0000 팩스 : 0000-000-0000
+                    </br>
+                    이메일 : abcdefg@gmail.com
+                </p>
+            </section>
+
+            <section id="footer_top_sec2">
+                <div id="footer_nav_warp">
+                    <ul id="footer_nav_ul">
+                        <li class="footer_nav_ul_list">
+                            <a href="">about</a>
+                            <ul class="footer_nav_sub ">
+                                <li><a href="">펜션소개</a></li>
+                                <li><a href="">펜션둘러보기</a></li>
+                                <li><a href="">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li class="footer_nav_ul_list">
+                            <a href="">room</a>
+                            <ul class="footer_nav_sub ">
+                                <li><a href="">데이지</a></li>
+                                <li><a href="">민들레</a></li>
+                                <li><a href="">바이올렛</a></li>
+                                <li><a href="">아이리스</a></li>
+                            </ul>
+                        </li>
+                        <li class="footer_nav_ul_list">
+                            <a href="">service</a>
+                            <ul class="footer_nav_sub ">
+                                <li><a href="">조식서비스</a></li>
+                                <li><a href="">이벤트</a></li>
+                                <li><a href="">바비큐</a></li>
+                                <li><a href="">픽업서비스</a></li>
+                            </ul>
+                        </li>
+                        <li class="footer_nav_ul_list">
+                            <a href="">reservation</a>
+                            <ul class="footer_nav_sub ">
+                                <li><a href="">예약안내</a></li>
+                                <li><a href="">실시간예약</a></li>
+                            </ul>
+                        </li>
+                        <li class="footer_nav_ul_list">
+                            <a href="">tour</a>
+                            <ul class="footer_nav_sub ">
+                                <li><a href="">링크타입</a></li>
+                                <li><a href="">목록타입</a></li>
+                            </ul>
+                        </li>
+                        <li class="footer_nav_ul_list">
+                            <a href="">community</a>
+                            <ul class="footer_nav_sub ">
+                                <li><a href="">공지사항</a></li>
+                                <li><a href="">이용후기</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div id="footer_bottom">
+            ⓒ샘플스테이 - 펜션 홈페이지 샘플 All rights reserved.
+        </div>
+    </footer>
+</body>
+<script type="text/javascript">
+    const header = document.querySelector('header');
+    const hS1 = document.getElementById('h_s1');
+    const hS2 = document.getElementById('h_s2');
+    const hS3 = document.getElementById('h_s3');
+    const hS1aTags = h_s1.querySelectorAll('a');
+    const hS2aTags = h_s2.querySelectorAll('a');
+
+    let mainLogo = document.getElementById("mainlogo");
+    let timeoutId;
+    
+    function headerMouseOver() {
+        //로고바꾸기 >검정
+        mainLogo.src = "/img/top/logo_b.png";
+        //배경색 > 흰색
+        hS1.style.backgroundColor = 'var(--color-w)';
+        hS2.style.backgroundColor = 'var(--color-w)';
+        //텍스트색 > 검정
+        hS1aTags.forEach(hS1aTags => {
+            hS1aTags.style.color = 'var(--color-b)';
+        });
+        hS2aTags.forEach(hS2aTags => {
+            hS2aTags.style.color = 'var(--color-b)';
+        });
+        hS3.style.opacity = '1';
+        hS3.style.transform = 'translateY(0)';
+        clearTimeout(timeoutId);
+        hS3.style.transition = 'all .5s';
+    }
+    
+    function headerMouseOut() {
+        hS3.style.opacity = '0';
+        hS3.style.transform = 'translateY(-100%)';
+        hS3.style.transition = 'all .1s';
+        timeoutId = setTimeout(() => {
+            //로고바꾸기 > 흰색
+            mainLogo.src = "/img/top/logo_w.png";
+            //배경색 > 투명
+            hS1.style.backgroundColor = '';
+            hS2.style.backgroundColor = '';
+            //텍스트색 > 검정
+            hS1aTags.forEach(hS1aTags => {
+                hS1aTags.style.color = 'var(--color-w)';
+            });
+            hS2aTags.forEach(hS2aTags => {
+                hS2aTags.style.color = 'var(--color-w)';
+            });
+            }, 100);
+            
+    }
+      
+</script>
+</html>
